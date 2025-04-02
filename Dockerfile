@@ -4,7 +4,9 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install "fastapi[standard]"
 
 COPY . .
 
-CMD [ "python", "./main.py" ]
+EXPOSE 80
+CMD [ "fastapi", "run", "app/main.py", "--port", "80" ]
