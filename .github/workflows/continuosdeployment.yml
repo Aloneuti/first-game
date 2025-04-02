@@ -16,7 +16,7 @@ jobs:
         with:
           name: Projetozipado
           path: |
-            '**.py'
+            **.py
             README.md
 
   deploy:
