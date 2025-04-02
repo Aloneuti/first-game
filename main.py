@@ -10,4 +10,8 @@ async def root():
 
 @app.get("/test1")
 async def funcaoteste():
-    return {"teste": True, "random_number": random.randint(0 , 1000)}
+    return {"test1": True, "random_number": random.randint(0 , 1000)}
+
+@app.get("/test2")
+async def test():
+    return {"test2": "number"}
