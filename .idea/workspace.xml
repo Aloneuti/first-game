@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7f0b79a-edfa-4970-bcac-e4aa5a7fd0df" name="Changes" comment="tst">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/continuosdeployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuosdeployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuosdelivery.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuosdelivery.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuosdeployment.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/continuosintegration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/continuosintegration.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
