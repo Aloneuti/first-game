@@ -8,7 +8,7 @@ from unittest.mock import patch
 @pytest.mark.asyncio
 async def test_home():
     result = await home()
-    assert home() == {"message": "Aqui é o começo"}
+    assert result == {"message": "Aqui é o começo"}
 
 
 @pytest.mark.asyncio
