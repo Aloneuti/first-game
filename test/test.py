@@ -1,9 +1,11 @@
+import pytest
+
 from src.main import *
 from unittest.mock import patch
 
+@pytest.mark.asyncio
 def test_home():
     assert home() == {"message": "Aqui é o começo"}
-
 
 def test_number():
     with patch('random.randint', return_value=12345):
@@ -13,7 +15,7 @@ def test_number():
 
 def test_signuppage():
     nickname_teste = Player(nickname="Fulano", platform="Steam", Active=False)
-    assert nickname_teste == signuppage()
+    assert nickname_teste == signuppage(nickname_teste)
 
 
 def test_update_player_negative():
