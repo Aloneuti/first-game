@@ -1,43 +1,46 @@
 import pytest
+import pytest_asyncio
 
 from src.main import *
 from unittest.mock import patch
 
-@pytest.mark.asyncio
-def test_home():
-    result = home()
-    yield result
-    assert home() == {"message": "Aqui é o começo"}
 
-def test_number():
+@pytest.mark.asyncio
+async def test_home():
+    result = await home()
+    assert result == {"message": "Aqui é o começo"}
+
+
+@pytest.mark.asyncio
+async def test_number():
     with patch('random.randint', return_value=12345):
-        result = number()
-        yield result
+        result = await number()
 
     assert result== {"Number": True, "Random_number": 12345}
 
-def test_signuppage():
+
+@pytest.mark.asyncio
+async def test_signuppage():
     nickname_teste = Player(nickname="Fulano", platform="Steam", Active=False)
-    result = signuppage(nickname_teste)
-    yield result
+    result = await signuppage(nickname_teste)
     assert nickname_teste == result
 
-def test_update_player_negative():
-    result = update_player(-5)
-    yield result
+@pytest.mark.asyncio
+async def test_update_player_negative():
+    result = await update_player(-5)
     assert not result
 
-def test_update_player_positive():
-    result = update_player(10)
-    yield result
+@pytest.mark.asyncio
+async def test_update_player_positive():
+    result = await update_player(10)
     assert result
 
-def test_delete_player_negative():
-    result = delete_player(-5)
-    yield result
+@pytest.mark.asyncio
+async def test_delete_player_negative():
+    result = await delete_player(-5)
     assert not result
 
-def test_delete_player_positive():
-    result = delete_player(5)
-    yield result
+@pytest.mark.asyncio
+async def test_delete_player_positive():
+    result = await delete_player(5)
     assert result
