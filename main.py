@@ -33,3 +33,6 @@ async def update_player(id_player: int):
 @app.delete("up/delete/{id_player}")
 async def delete_player(id_player: int):
     return id_player > 0
+
+
+##a
