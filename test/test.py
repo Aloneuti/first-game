@@ -44,3 +44,32 @@ async def test_delete_player_negative():
 async def test_delete_player_positive():
     result = await delete_player(5)
     assert result
+
+@pytest.mark.asyncio
+async def test_check_status():
+    result = await check_status()
+    assert result["status"] == "API está funcionando perfeitamente."
+
+
+@pytest.mark.asyncio
+async def test_login():
+    test_player = Player(nickname="TesteUser", platform="PC", Active=True)
+    result = await login(test_player)
+    assert "logado com sucesso" in result["message"]
+
+@pytest.mark.asyncio
+async def test_list_platforms():
+    result = await list_platforms()
+    assert isinstance(result["platforms"], list)
+    assert "PC" in result["platforms"]
+
+@pytest.mark.asyncio
+async def test_activate_player():
+    result = await activate_player("Jogador123")
+    assert result["activated"] is True
+    assert result["nickname"] == "Jogador123"
+
+@pytest.mark.asyncio
+async def test_random_platform():
+    result = await random_platform()
+    assert result["platform"] in ["PC", "Xbox", "PlayStation", "Switch"]
