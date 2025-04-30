@@ -34,5 +34,23 @@ async def update_player(id_player: int):
 async def delete_player(id_player: int):
     return id_player > 0
 
+@app.get("/status")
+async def check_status():
+    return {"status": "API está funcionando perfeitamente."}
 
-##a
+@app.post("/login")
+async def login(player: Player):
+    return {"message": f"Usuário {player.nickname} logado com sucesso!"}
+
+@app.get("/platforms")
+async def list_platforms():
+    return {"platforms": ["PC", "Xbox", "PlayStation", "Switch"]}
+
+@app.patch("/player/activate/{nickname}")
+async def activate_player(nickname: str):
+    return {"nickname": nickname, "activated": True}
+
+@app.get("/random/platform")
+async def random_platform():
+    platforms = ["PC", "Xbox", "PlayStation", "Switch"]
+    return {"platform": random.choice(platforms)}
